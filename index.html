@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UIT – Đếm Ngược Ngày Thi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header class="site-header">
+
+    <!-- Ambient background layers -->
+    <div class="header-bg">
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <!-- Inner content wrapper -->
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <div class="header-logo" id="headerLogo">
+        <img
+          src="img/logo.svg"
+          alt="Logo UIT"
+          class="logo-img"
+        />
+      </div>
+
+      <!-- Divider -->
+      <div class="header-divider" id="headerDivider"></div>
+
+      <!-- Text block -->
+      <div class="header-text" id="headerText">
+        <span class="text-acronym">UIT</span>
+        <span class="text-fullname">Đại học Công nghệ Thông tin</span>
+        <span class="text-slogan">"Một là đậu, hai là phải đậu!"</span>
+      </div>
+
+    </div>
+  </header>
+  <!-- ══════════════ END HEADER ══════════════ -->
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="site-main" id="siteMain">
+
+    <!-- ── Sticky Timer ── -->
+    <div class="main-timer-wrap" id="mainTimerWrap">
+      <div class="main-timer" id="mainTimer">
+        <span class="timer-label" id="timerLabel">Đang tải...</span>
+        <span class="timer-display" id="timerDisplay">--</span>
+      </div>
+    </div>
+
+    <!-- ── Timeline Section ── -->
+    <div class="timeline-section">
+
+      <!-- Grid: left | center | right -->
+      <div class="timeline-grid" id="timelineGrid">
+
+        <!-- CENTER: vertical track -->
+        <div class="timeline-track-wrap">
+          <div class="timeline-track">
+            <div class="track-bg"></div>
+            <div class="track-progress" id="trackProgress"></div>
+            <div class="track-current-dot" id="trackCurrentDot"></div>
+          </div>
+        </div>
+
+        <!-- EVENT BLOCKS – rendered by JS -->
+        <div class="timeline-events" id="timelineEvents"></div>
+
+      </div>
+    </div>
+
+  </main>
+  <!-- ══════════════ END MAIN ══════════════ -->
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="site-footer" id="siteFooter">
+
+    <!-- Ambient bg -->
+    <div class="footer-bg">
+      <div class="footer-orb footer-orb--1"></div>
+      <div class="footer-orb footer-orb--2"></div>
+    </div>
+
+    <div class="footer-inner">
+
+      <!-- Title -->
+      <h2 class="footer-title">THÔNG TIN THÍ SINH</h2>
+
+      <!-- Main layout: avatar + stats -->
+      <div class="footer-layout">
+
+        <!-- Avatar -->
+        <div class="footer-avatar-wrap" id="footerAvatar">
+          <img
+            src="img/é.jpg"
+            alt="Avatar thí sinh"
+            class="footer-avatar"
+          />
+          <div class="avatar-name">Trần Quang Bình</div>
+          <div class="avatar-sub">Thí sinh THPT 2026</div>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="footer-stats" id="footerStats">
+
+          <!-- Row 1: VACT-1 | VACT-2 -->
+          <div class="stats-row stats-row--2">
+            <div class="stat-card" data-key="vact1">
+              <div class="stat-icon">V<sub>1</sub></div>
+              <div class="stat-title">VACT – 1</div>
+              <div class="stat-score" id="score-vact1">???? <span>/ 1200</span></div>
+              <div class="stat-bar-wrap">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill" id="bar-vact1" style="width:0%"></div>
+                </div>
+                <div class="stat-percent" id="pct-vact1">–</div>
+              </div>
+            </div>
+
+            <div class="stat-card" data-key="vact2">
+              <div class="stat-icon">V<sub>2</sub></div>
+              <div class="stat-title">VACT – 2</div>
+              <div class="stat-score" id="score-vact2">???? <span>/ 1200</span></div>
+              <div class="stat-bar-wrap">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill" id="bar-vact2" style="width:0%"></div>
+                </div>
+                <div class="stat-percent" id="pct-vact2">–</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Toán | Lý | Hoá -->
+          <div class="stats-row stats-row--3">
+            <div class="stat-card" data-key="toan">
+              <div class="stat-icon stat-icon--svg">
+                <!-- ruler icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6v12M10 6v8M14 6v12M18 6v8"/></svg>
+              </div>
+              <div class="stat-title">Toán</div>
+              <div class="stat-score" id="score-toan">?? <span>/ 10</span></div>
+              <div class="stat-bar-wrap">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill" id="bar-toan" style="width:0%"></div>
+                </div>
+                <div class="stat-percent" id="pct-toan">–</div>
+              </div>
+            </div>
+
+            <div class="stat-card" data-key="ly">
+              <div class="stat-icon stat-icon--svg">
+                <!-- atom icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4.5"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/></svg>
+              </div>
+              <div class="stat-title">Vật Lý</div>
+              <div class="stat-score" id="score-ly">?? <span>/ 10</span></div>
+              <div class="stat-bar-wrap">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill" id="bar-ly" style="width:0%"></div>
+                </div>
+                <div class="stat-percent" id="pct-ly">–</div>
+              </div>
+            </div>
+
+            <div class="stat-card" data-key="hoa">
+              <div class="stat-icon stat-icon--svg">
+                <!-- flask icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6m-5 6 5 9H5l5-9V3"/><path d="M6.6 15h10.8"/></svg>
+              </div>
+              <div class="stat-title">Hoá Học</div>
+              <div class="stat-score" id="score-hoa">?? <span>/ 10</span></div>
+              <div class="stat-bar-wrap">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill" id="bar-hoa" style="width:0%"></div>
+                </div>
+                <div class="stat-percent" id="pct-hoa">–</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: Tổng hợp -->
+          <div class="stats-row stats-row--1">
+            <div class="stat-card stat-card--total" data-key="tong">
+              <div class="stat-total-header">
+                <div class="stat-icon stat-icon--svg">
+                  <!-- graduation cap -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+                </div>
+                <div>
+                  <div class="stat-title">Điểm Tổng Hợp</div>
+                  <div class="stat-total-sub">Tổng hợp tất cả môn thi</div>
+                </div>
+                <div class="stat-score stat-score--big" id="score-tong">?? <span>/ 100</span></div>
+              </div>
+              <div class="stat-bar-wrap stat-bar-wrap--full">
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill stat-bar-fill--wide" id="bar-tong" style="width:0%"></div>
+                </div>
+                <div class="stat-percent stat-percent--big" id="pct-tong">–</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /footer-stats -->
+      </div><!-- /footer-layout -->
+
+    </div><!-- /footer-inner -->
+  </footer>
+  <!-- ══════════════ END FOOTER ══════════════ -->
+
+  <script src="script.js"></script>
+</body>
+</html>
