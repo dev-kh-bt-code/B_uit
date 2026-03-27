@@ -79,10 +79,10 @@ body {
   height: 520px;
   top: -120px;
   left: -100px;
-  background: radial-gradient(circle, #3b82f7, #096f98);
+  /*background: radial-gradient(circle, #3b82f7, #096f98);*/
 }
 
-.bg-orb--2 {
+/*.bg-orb--2 {
   width: 400px;
   height: 400px;
   bottom: -80px;
@@ -90,8 +90,8 @@ body {
   background: radial-gradient(circle, #f0b429, #3d8ea9);
   opacity: 0.12;
 }
-
-.bg-grid {
+*/
+/*.bg-grid {
   position: absolute;
   inset: 0;
   background-image:
