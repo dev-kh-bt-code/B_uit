@@ -296,14 +296,14 @@ function initScrollProgress() {
    ↓ Nhập điểm ở đây ↓
 ════════════════════════════════════════ */
 const SCORES = {
-  vact1: null,   // ví dụ: 980  (max 1200) – null = chưa có
+  vact1: 914,   // ví dụ: 980  (max 1200) – null = chưa có
   vact2: null,   // ví dụ: 1050 (max 1200)
   toan:  null,   // ví dụ: 8.4  (max 10)
   ly:    null,   // ví dụ: 7.0  (max 10)
   hoa:   null,   // ví dụ: 9.2  (max 10)
   tong:  null,   // ví dụ: 72   (max 100) – điểm tổng hợp
 };
-
+ 
 const SCORE_MAX = {
   vact1: 1200,
   vact2: 1200,
